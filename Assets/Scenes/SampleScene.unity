@@ -416,6 +416,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 109434732395284509, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
   m_PrefabInstance: {fileID: 476915732}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &476915734 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 109434732388006827, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
+  m_PrefabInstance: {fileID: 476915732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &492219136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,6 +1618,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5686134208185362930, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
   m_PrefabInstance: {fileID: 1233227949}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1233227951 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5686134208192617028, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+  m_PrefabInstance: {fileID: 1233227949}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1273219396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
@@ -1642,6 +1652,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  animator: {fileID: 1233227951}
 --- !u!1 &1299400640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,6 +1787,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  animator: {fileID: 476915734}
 --- !u!1 &2146471786
 GameObject:
   m_ObjectHideFlags: 0
