@@ -17,6 +17,7 @@ public class EnemyAttackState : EnemyBaseState
     public override void OnEnter()
     {
         //animator.SetBool(AttackID, false);
+        Debug.Log("Entered Attack State");
     }
 
     public override void Update()

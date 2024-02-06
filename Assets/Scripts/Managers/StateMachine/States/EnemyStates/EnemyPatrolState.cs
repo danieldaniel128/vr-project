@@ -18,10 +18,7 @@ public class EnemyPatrolState : EnemyBaseState
 
     public override void OnEnter()
     {
-        //animation
-        //_animator.SetBool("IsMoving", true);
-        //sound
-        Debug.Log("Started Wander");
+        Debug.Log("Entered Patrol State");
     }
 
 

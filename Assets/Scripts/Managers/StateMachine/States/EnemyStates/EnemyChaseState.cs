@@ -14,6 +14,7 @@ internal class EnemyChaseState : EnemyBaseState
     }
     public override void OnEnter()
     {
+        Debug.Log("Entered Chase State");
         //_animator.SetBool("IsMoving", true);
         //set animation
         //set sound
