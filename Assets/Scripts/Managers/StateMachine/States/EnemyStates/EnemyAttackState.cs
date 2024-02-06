@@ -22,10 +22,6 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void Update()
     {
-        //look at player
-        Vector3 direction = (_player.position - enemy.transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
-        enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, lookRotation, Time.deltaTime);
     }
     public override void OnExit()
     {
