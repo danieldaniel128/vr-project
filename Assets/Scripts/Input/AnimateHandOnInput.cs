@@ -9,7 +9,6 @@ public class AnimateHandOnInput : MonoBehaviour
     private void Update()
     {
         float triggerValue = picnchAnimationAction.action.ReadValue<float>();
-        Debug.Log(triggerValue);
         animator.SetFloat("Grip", triggerValue);
     }
 }
