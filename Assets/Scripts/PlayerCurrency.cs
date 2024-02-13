@@ -17,6 +17,8 @@ public class PlayerCurrency : MonoBehaviour
     public void SetCurrency(int amountToAdd)
     {
         currency += amountToAdd;
+
+        Debug.Log(currency);
     }
 
     public int GetCurrency()
