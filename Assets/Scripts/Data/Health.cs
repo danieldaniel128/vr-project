@@ -7,11 +7,11 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private float _currentHP;
     [SerializeField] private float _maxHP;
-    public float CurrentHP { get { return _currentHP; } private set { _currentHP = value; OnValueChanged?.Invoke(); } }
+    public float CurrentHP { get { return _currentHP; } private set { _currentHP = value; OnValueChanged?.Invoke(_currentHP,MaxHP); } }
     public float MaxHP { get { return _maxHP; } private set { _maxHP = value; } }
     public bool IsDead { get; private set; }
 
-    public UnityEvent OnValueChanged;
+    public UnityEvent<float,float> OnValueChanged;
     public UnityEvent OnDeath;
 
 
