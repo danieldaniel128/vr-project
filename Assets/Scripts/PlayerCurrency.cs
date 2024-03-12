@@ -1,29 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayerCurrency : MonoBehaviour
 {
-    [SerializeField] private int currency = 100;
+    [SerializeField] private int _currency = 100;
+    public int Currency { get { return _currency; } set {  _currency = value; OnCurrencyChanged?.Invoke(_currency); } }
+    [SerializeField] public UnityEvent<int> OnCurrencyChanged;
 
-    [SerializeField] private UnityEvent OnCurrencyChanged;
-
+    private void Start()
+    {
+        OnCurrencyChanged?.Invoke(_currency);
+    }
     public void UseCurrency(int amountToUse)
     {
-        currency -= amountToUse;
+        Currency -= amountToUse;
     }
-
+    [ContextMenu("use currency")]
+    public void UseCurrencyTest()
+    {
+        Currency -= 5;
+    }
     public void SetCurrency(int amountToAdd)
     {
-        currency += amountToAdd;
+        Currency += amountToAdd;
 
-        Debug.Log(currency);
+        Debug.Log(Currency);
     }
 
     public int GetCurrency()
     {
-        return currency;
+        return Currency;
     }
 
 
