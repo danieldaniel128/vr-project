@@ -1,7 +1,7 @@
 ﻿using System;
 
 public abstract class Timer {
-    protected float initialTime;
+    public float initialTime { get; protected set; }
     protected float Time { get; set; }
     public bool IsRunning { get; protected set; }
         

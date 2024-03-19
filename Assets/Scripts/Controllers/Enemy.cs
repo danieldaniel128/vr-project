@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour,IPoolable
 {
 
     [SerializeField] PlayerDetector _playerDetector;
@@ -14,6 +14,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] Transform[] _patrolPoints;
     StateMachine _stateMachine;
     public bool IsAttacking;
+
+    public ObjectPool Parent { get; set; }
+
+    public GameObject GameObject => gameObject;
 
     void Start()
     {
@@ -46,5 +50,10 @@ public class Enemy : MonoBehaviour
     public void OnDeath()
     {
         Debug.Log("enemy died");
+    }
+
+    public void SetAgentPatrolPoints(Transform[] patrolPoints)
+    {
+        _patrolPoints = patrolPoints;
     }
 }

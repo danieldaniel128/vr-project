@@ -6,8 +6,9 @@ public class PlayerDetector : MonoBehaviour
     [SerializeField] float detectionCooldown = 1f; // Time between detections
     [SerializeField] float attackRange = 2f; // Distance from enemy to player to attack
 
-    public Transform Player;
+    public Transform Player => GameManager.Instance.Player.transform;
     float _detectionTimer;
+
 
     private void Update()
     {
