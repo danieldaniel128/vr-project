@@ -4,11 +4,11 @@ using UnityEngine.Events;
 public class WaveManager : MonoBehaviour
 {
     [SerializeField] public UnityEvent<int> OnWaveCountChanged;
-    public int WaveAmount { get { return wavesAmount; } set { wavesAmount = value; OnWaveCountChanged?.Invoke(wavesAmount); } }
+    public int WaveAmount { get { return wavesAmountNumber; } set { wavesAmountNumber = value; OnWaveCountChanged?.Invoke(wavesAmountNumber); } }
 
     [SerializeField] public UnityEvent<int> OnWaveTimeChange;
-    public int WaveTimer { get { return WaveTimeAmount; } set { WaveTimeAmount = value;  OnWaveTimeChange?.Invoke(WaveTimeAmount); } }
-    public int WaveTimeAmount { get => (int)(waveTimer.Progress * waveTimeCooldown); private set { } }
+    public int WaveTimer { get { return WaveTimeNumber; } set { WaveTimeNumber = value;  OnWaveTimeChange?.Invoke(WaveTimeNumber); } }
+    public int WaveTimeNumber { get => (int)(waveTimer.Progress * waveTimeCooldown); private set { } }
 
     [SerializeField] private UnityEvent OnWaveEnded;
     [SerializeField] private UnityEvent OnWaveStarted;
@@ -17,14 +17,14 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private PlayerCurrency playerCurrency;
     private int playerCurrencyNum = 100;
     private bool IsInWave = false;
-    private int wavesAmount = 0;
+    private int wavesAmountNumber = 0;
     private CountdownTimer waveTimer;
     private CountdownTimer restTimer;
 
 
     private void Start()
     {
-        OnWaveCountChanged?.Invoke(wavesAmount);
+        OnWaveCountChanged?.Invoke(wavesAmountNumber);
         waveTimer = new CountdownTimer(waveTimeCooldown);
         restTimer = new CountdownTimer(restTimerCoolDown);
         waveTimer.OnTimerStart += StartWave;
@@ -59,16 +59,17 @@ public class WaveManager : MonoBehaviour
 
     public void StartWave()
     {
-        //OnWaveStarted?.invoke
+        OnWaveCountChanged?.Invoke(wavesAmountNumber);
         OnWaveTimeChange?.Invoke(WaveTimer);
         IsInWave = true;
     }
     public void EndWave()
     {
-        OnWaveCountChanged?.Invoke(wavesAmount);
-        IsInWave = false;
         waveTimer.Reset();
-        wavesAmount++;
+        waveTimer.Start();
+        OnWaveTimeChange?.Invoke(WaveTimer);
+        IsInWave = false;
+        WaveAmount++;
     }
 
 }
