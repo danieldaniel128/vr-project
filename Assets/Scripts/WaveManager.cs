@@ -63,9 +63,6 @@ public class WaveManager : MonoBehaviour
         OnWaveTimeChange?.Invoke(WaveTimeAmount);
         IsInWave = true;
     }
-
-    [ContextMenu("End a wave")]
-
     public void EndWave()
     {
         OnWaveCountChanged?.Invoke(wavesAmount);

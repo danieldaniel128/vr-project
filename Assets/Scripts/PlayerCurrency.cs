@@ -9,7 +9,7 @@ public class PlayerCurrency : MonoBehaviour
 
     private void Start()
     {
-        OnCurrencyChanged?.Invoke(_currency);
+        OnCurrencyChanged?.Invoke(Currency);
     }
     public void UseCurrency(int amountToUse)
     {
