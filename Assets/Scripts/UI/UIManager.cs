@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
         waveCountText.text = "Wave: " + $"{waveCount}";
     }
 
-    public void WaveTimer(float timer)
+    public void WaveTimer(int timer)
     {
         WavetimerText.text = $"{timer}";
     }

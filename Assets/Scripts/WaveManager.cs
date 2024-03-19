@@ -6,9 +6,9 @@ public class WaveManager : MonoBehaviour
     [SerializeField] public UnityEvent<int> OnWaveCountChanged;
     public int WaveAmount { get { return wavesAmount; } set { wavesAmount = value; OnWaveCountChanged?.Invoke(wavesAmount); } }
 
-    [SerializeField] public UnityEvent<float> OnWaveTimeChange;
-    public float WaveTimer { get { return WaveTimeAmount; } set { WaveTimeAmount = value;  OnWaveTimeChange?.Invoke(WaveTimeAmount); } }
-    public float WaveTimeAmount { get => waveTimer.Progress * waveTimeCooldown; private set { } }
+    [SerializeField] public UnityEvent<int> OnWaveTimeChange;
+    public int WaveTimer { get { return WaveTimeAmount; } set { WaveTimeAmount = value;  OnWaveTimeChange?.Invoke(WaveTimeAmount); } }
+    public int WaveTimeAmount { get => (int)(waveTimer.Progress * waveTimeCooldown); private set { } }
 
     [SerializeField] private UnityEvent OnWaveEnded;
     [SerializeField] private UnityEvent OnWaveStarted;
@@ -54,13 +54,13 @@ public class WaveManager : MonoBehaviour
     {
         waveTimer.Tick(Time.deltaTime);
 
-        OnWaveTimeChange?.Invoke(WaveTimeAmount);
+        OnWaveTimeChange?.Invoke(WaveTimer);
     }
 
     public void StartWave()
     {
         //OnWaveStarted?.invoke
-        OnWaveTimeChange?.Invoke(WaveTimeAmount);
+        OnWaveTimeChange?.Invoke(WaveTimer);
         IsInWave = true;
     }
     public void EndWave()
