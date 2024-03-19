@@ -250,10 +250,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5634bf0fbff36ff4ba97ead5365d94ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currency: 100
+  _currency: 100
   OnCurrencyChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2135944273}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: CurrencyChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &388966765 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3105561565854094863, guid: baef2aa91a9c0bd48aa83945008b73ab, type: 3}
+  m_PrefabInstance: {fileID: 2511713122474470952}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &448603999
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,6 +315,21 @@ MonoBehaviour:
   restTimerCoolDown: 0
   waveTimeCooldown: 4
   playerCurrency: {fileID: 278383113}
+  OnWaveCountChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2135944273}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: WaveCount
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &448604001
 Transform:
   m_ObjectHideFlags: 0
@@ -937,6 +975,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913035512}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &919122435 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6680526049669325484, guid: baef2aa91a9c0bd48aa83945008b73ab, type: 3}
+  m_PrefabInstance: {fileID: 2511713122474470952}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &991628464 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7962567647511019849, guid: 38bd7bceb573a3c4ea006c228ce7e941, type: 3}
@@ -1868,7 +1917,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1902c253240ea8c4fbd7a43ce99c93c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currencyText: {fileID: 0}
+  currencyText: {fileID: 388966765}
+  waveCountText: {fileID: 919122435}
 --- !u!4 &2135944274
 Transform:
   m_ObjectHideFlags: 0

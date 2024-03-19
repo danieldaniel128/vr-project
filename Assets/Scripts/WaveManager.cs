@@ -3,6 +3,13 @@ using UnityEngine.Events;
 
 public class WaveManager : MonoBehaviour
 {
+    [SerializeField] public UnityEvent<int> OnWaveCountChanged;
+    public int WaveAmount { get { return wavesAmount; } set { wavesAmount = value; OnWaveCountChanged?.Invoke(wavesAmount); } }
+
+    [SerializeField] public UnityEvent<float> OnWaveTimeChange;
+    public float WaveTimer { get { return WaveTimeAmount; } set { WaveTimeAmount = value;  OnWaveTimeChange?.Invoke(WaveTimeAmount); } }
+    public float WaveTimeAmount { get => waveTimer.Progress * waveTimeCooldown; private set { } }
+
     [SerializeField] private UnityEvent OnWaveEnded;
     [SerializeField] private UnityEvent OnWaveStarted;
     [SerializeField] private int restTimerCoolDown = 0;
@@ -14,8 +21,10 @@ public class WaveManager : MonoBehaviour
     private CountdownTimer waveTimer;
     private CountdownTimer restTimer;
 
+
     private void Start()
     {
+        OnWaveCountChanged?.Invoke(wavesAmount);
         waveTimer = new CountdownTimer(waveTimeCooldown);
         restTimer = new CountdownTimer(restTimerCoolDown);
         waveTimer.OnTimerStart += StartWave;
@@ -45,17 +54,21 @@ public class WaveManager : MonoBehaviour
     {
         waveTimer.Tick(Time.deltaTime);
 
-        Debug.Log(waveTimer.Progress * waveTimeCooldown);
+        OnWaveTimeChange?.Invoke(WaveTimeAmount);
     }
 
     public void StartWave()
     {
         //OnWaveStarted?.invoke
+        OnWaveTimeChange?.Invoke(WaveTimeAmount);
         IsInWave = true;
     }
 
+    [ContextMenu("End a wave")]
+
     public void EndWave()
     {
+        OnWaveCountChanged?.Invoke(wavesAmount);
         IsInWave = false;
         waveTimer.Reset();
         wavesAmount++;
