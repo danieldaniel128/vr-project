@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpellShooting : MonoBehaviour
+public class SpellShooting : Ability
 {
     [SerializeField] Transform _spellSpawnPoint;
     public GameObject spellProjectile;
@@ -27,4 +27,12 @@ public class SpellShooting : MonoBehaviour
         Instantiate(spellProjectile, _spellSpawnPoint.position, Quaternion.identity).GetComponent<Rigidbody>().velocity = _spellSpawnPoint.forward.normalized * projectileSpeed;
     }
 
+    public override void UseAbility()
+    {
+        if (Time.time >= nextFireTime)
+        {
+            nextFireTime = Time.time + 1f / fireRate;
+            ShootSpell();
+        }
+    }
 }

@@ -6,10 +6,8 @@ public class ProjectileScript : MonoBehaviour
 {
     private bool hitsomething;
     public GameObject ImpactVFX;
-    [SerializeField] private bool isTrigger;
     private void OnCollisionEnter(Collision collision)
     {
-        if(!isTrigger)
         if(collision.gameObject.tag != "Spell" && collision.gameObject.tag != "Player" && !hitsomething)
         {
             hitsomething= true;

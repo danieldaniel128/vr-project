@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CircleImpactAbility : MonoBehaviour
+public class CircleImpactAbility : Ability
 {
     [SerializeField] GameObject _abilityActivator;
     [SerializeField] GameObject _impactVFX;
@@ -18,8 +18,6 @@ public class CircleImpactAbility : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-            ActivateAbility();
         AttackDuration.Tick(Time.deltaTime);
     }
     void ActivateAbility()
@@ -33,5 +31,10 @@ public class CircleImpactAbility : MonoBehaviour
     void DeactivateAbility()
     {
         _abilityActivator.SetActive(false);
+    }
+
+    public override void UseAbility()
+    {
+        ActivateAbility();
     }
 }

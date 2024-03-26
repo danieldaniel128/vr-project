@@ -580,7 +580,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ImpactVFX: {fileID: 4198801562984740844, guid: 8948cd8ec8111f042b05cf6ba3bfeba5, type: 3}
-  isTrigger: 0
 --- !u!1 &1361712230
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,7 +897,7 @@ Transform:
   m_GameObject: {fileID: 1804239252}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.74, y: 1.116, z: -1.25}
+  m_LocalPosition: {x: -2.6, y: 1.116, z: -1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

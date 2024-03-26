@@ -5130,3 +5130,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ImpactVFX: {fileID: 4198801562984740844, guid: 8948cd8ec8111f042b05cf6ba3bfeba5, type: 3}
+  isTrigger: 0
