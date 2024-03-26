@@ -388,7 +388,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   restTimerCoolDown: 0
-  waveTimeCooldown: 20
+  waveTimeCooldown: 14
   playerCurrency: {fileID: 278383113}
 --- !u!4 &448604001
 Transform:
@@ -2307,6 +2307,10 @@ PrefabInstance:
     - target: {fileID: 3449851155604157665, guid: fd0b1cbee3ef69a478220112fc61ccec, type: 3}
       propertyPath: m_Name
       value: Pistol Body
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449851155604157665, guid: fd0b1cbee3ef69a478220112fc61ccec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

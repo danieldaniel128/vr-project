@@ -18,7 +18,7 @@ public class WaveManager : MonoBehaviour
     private int playerCurrencyNum = 100;
     private bool IsInWave = false;
     private int wavesAmountNumber = 0;
-    private CountdownTimer waveTimer;
+    public CountdownTimer waveTimer;
     private CountdownTimer restTimer;
 
 
