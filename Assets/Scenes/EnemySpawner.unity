@@ -1540,7 +1540,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  currentAbility: {fileID: 0}
+  currentAbility: {fileID: 1196748903}
   abilities: []
 --- !u!4 &1196748902 stripped
 Transform:
@@ -1559,7 +1559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 685fda21e1458594782f0b0dca48863e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spellSpawnPoint: {fileID: 1196748902}
+  _spellSpawnPoint: {fileID: 1303749511}
   spellProjectile: {fileID: 7938994315017324522, guid: 49061d51c46f774449e893fb1b8f44cf, type: 3}
   projectileSpeed: 30
   fireRate: 4
@@ -1825,6 +1825,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299400640}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1303749510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1303749511}
+  m_Layer: 0
+  m_Name: SpawnAbilityPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1303749511
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303749510}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.528}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1196748902}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1402642984 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7962567647511019849, guid: 38bd7bceb573a3c4ea006c228ce7e941, type: 3}
@@ -2513,6 +2544,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6031202635242844065, guid: baef2aa91a9c0bd48aa83945008b73ab, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031202635242844065, guid: baef2aa91a9c0bd48aa83945008b73ab, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031202635242844065, guid: baef2aa91a9c0bd48aa83945008b73ab, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031202635242844065, guid: baef2aa91a9c0bd48aa83945008b73ab, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6947846200303423853, guid: baef2aa91a9c0bd48aa83945008b73ab, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2528,6 +2575,10 @@ PrefabInstance:
     - target: {fileID: 6947846200303423853, guid: baef2aa91a9c0bd48aa83945008b73ab, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245660233129988759, guid: baef2aa91a9c0bd48aa83945008b73ab, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7245660233129988759, guid: baef2aa91a9c0bd48aa83945008b73ab, type: 3}
       propertyPath: m_IsActive
@@ -2554,8 +2605,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4710283047870445609, guid: baef2aa91a9c0bd48aa83945008b73ab, type: 3}
+    - {fileID: 7821163700431596802, guid: baef2aa91a9c0bd48aa83945008b73ab, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1182249170104216862, guid: baef2aa91a9c0bd48aa83945008b73ab, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1303749511}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1182249170103726462, guid: baef2aa91a9c0bd48aa83945008b73ab, type: 3}
       insertIndex: -1
