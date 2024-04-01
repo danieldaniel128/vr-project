@@ -14,7 +14,7 @@ public class SpellShooting : Ability
     void Update()
     {
         // Check if Fire1 button is pressed and enough time has passed since the last fire
-        if (Input.GetButton("Fire1") && Time.time >= nextFireTime)
+        if (Input.GetButton("Fire1") && Time.time >= nextFireTime && IsPurchased)
         {
             nextFireTime = Time.time + 1f / fireRate; // Calculate next fire time based on fire rate
             ShootSpell();
