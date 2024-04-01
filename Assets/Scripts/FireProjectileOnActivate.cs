@@ -9,8 +9,6 @@ public class FireProjectileOnActivate : MonoBehaviour
     [SerializeField] Transform spawnPoint;
     [SerializeField] float fireSpeed = 10;
 
-    
-
     void Start()
     {
         XRGrabInteractable grabable= GetComponent<XRGrabInteractable>();

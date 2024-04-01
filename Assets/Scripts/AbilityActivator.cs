@@ -8,10 +8,6 @@ public class AbilityActivator : MonoBehaviour
     [SerializeField] Ability currentAbility;
     [SerializeField] Ability[] abilities;
     [SerializeField] private PlayerCurrency playerCurrency;
-
-    [SerializeField] private Button ability1Button;
-    [SerializeField] private Button ability2Button;
-
     private void Update()
     {
         float triggerValue = useAbilityAction.action.ReadValue<float>();
