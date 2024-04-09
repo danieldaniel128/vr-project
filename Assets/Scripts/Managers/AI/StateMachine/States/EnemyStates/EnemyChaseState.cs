@@ -20,11 +20,11 @@ internal class EnemyChaseState : EnemyBaseState
         //set sound
         //Debug.Log("Started Chase");
 
-        _animator.SetTrigger("Walk");
     }
 
     public override void Update()
     {
+        _animator.SetTrigger(WalkHash);
         _agent.SetDestination(_player.position);
     }
 }

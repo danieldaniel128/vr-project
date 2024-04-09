@@ -19,23 +19,23 @@ public class EnemyAttackState : EnemyBaseState
         //animator.SetBool(AttackID, false);
         Debug.Log("Entered Attack State");
 
-        float distance = Vector3.Distance(_player.position, enemy.transform.position);
-
-        if (distance <= 0.2f)
-        {
-            animator.SetTrigger(AttackHash);
-        }
-        else
-        {
-            animator.SetTrigger(WalkHash);
-        }
     }
 
     public override void Update()
     {
+        float distance = Vector3.Distance(_player.position, enemy.transform.position);
+
+        if (distance <= 0.2f)
+        {
+            animator.SetBool(AttackHash, true);
+        }
+        else
+        {
+            OnExit();
+        }
     }
     public override void OnExit()
     {
-
+        animator.SetBool(AttackHash, false);
     }
 }

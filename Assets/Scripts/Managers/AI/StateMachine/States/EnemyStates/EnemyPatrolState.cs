@@ -19,18 +19,18 @@ public class EnemyPatrolState : EnemyBaseState
     public override void OnEnter()
     {
         Debug.Log("Entered Patrol State");
-
-        _animator.SetTrigger("Walk");
     }
 
 
     public override void Update()
     {
+        _animator.SetBool(WalkHash, true);
         SetDestinationPoint();
     }
     public override void OnExit()
     {
         _agent.isStopped = false;
+        _animator.SetBool(WalkHash, false);
     }
 
     void SetDestinationPoint()
