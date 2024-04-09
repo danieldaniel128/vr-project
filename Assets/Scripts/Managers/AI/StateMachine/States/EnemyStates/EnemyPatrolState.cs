@@ -19,6 +19,8 @@ public class EnemyPatrolState : EnemyBaseState
     public override void OnEnter()
     {
         Debug.Log("Entered Patrol State");
+
+        _animator.SetTrigger("Walk");
     }
 
 

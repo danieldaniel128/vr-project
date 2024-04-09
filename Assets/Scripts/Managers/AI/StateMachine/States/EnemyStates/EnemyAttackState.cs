@@ -7,7 +7,7 @@ public class EnemyAttackState : EnemyBaseState
     private Transform _player;
     private GameObject _vfx;
     private readonly int AttackID = Animator.StringToHash("IsAttacking");
-    public EnemyAttackState(Enemy enemy, Animator animator,GameObject vfx, NavMeshAgent agent, Transform player) : base(enemy, animator)
+    public EnemyAttackState(Enemy enemy, Animator animator, GameObject vfx, NavMeshAgent agent, Transform player) : base(enemy, animator)
     {
         _agent = agent;
         _player = player;
@@ -18,6 +18,17 @@ public class EnemyAttackState : EnemyBaseState
     {
         //animator.SetBool(AttackID, false);
         Debug.Log("Entered Attack State");
+
+        float distance = Vector3.Distance(_player.position, enemy.transform.position);
+
+        if (distance <= 0.2f)
+        {
+            animator.SetTrigger(AttackHash);
+        }
+        else
+        {
+            animator.SetTrigger(WalkHash);
+        }
     }
 
     public override void Update()
@@ -25,6 +36,6 @@ public class EnemyAttackState : EnemyBaseState
     }
     public override void OnExit()
     {
-        
+
     }
 }

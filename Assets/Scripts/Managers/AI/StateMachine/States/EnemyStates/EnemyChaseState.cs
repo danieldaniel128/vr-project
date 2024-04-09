@@ -19,6 +19,8 @@ internal class EnemyChaseState : EnemyBaseState
         //set animation
         //set sound
         //Debug.Log("Started Chase");
+
+        _animator.SetTrigger("Walk");
     }
 
     public override void Update()
