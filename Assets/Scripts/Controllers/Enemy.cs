@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour,IPoolable
 
     void Update()
     {
-        _stateMachine.Update();
+        _stateMachine. Update();
     }
 
     public void Attack()
